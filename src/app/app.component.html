@@ -6,10 +6,17 @@
   <a href="#">Logout</a>
 </header>
 
-<div style="height:100%" class="container-fluid fill ">
+<div class="row tabs">
+    <button class="col-sm-3">Administration</button>
+    <button class="col-sm-3">Time Card</button>
+    <button class="col-sm-3">Reports</button>
+    <button class="col-sm-3" disabled></button>
+</div>
+
+<div style="height:100%" class="container-fluid fill">
   <div style="height:100%" class="row fill">
        <!--{{% if user.is_superuser %}}-->
-      <div class="col-sm-2 col-xs-4 sidenav fill">
+      <div class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
 
           <ul>
 
@@ -28,6 +35,7 @@
 
       {{% if error_message %}}<p><strong>{{ error_message }}</strong></p>{% endif %}
       {{% endblock %}}-->
+
   </div>
 
 </div>
