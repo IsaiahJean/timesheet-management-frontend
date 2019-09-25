@@ -3,7 +3,9 @@
   <span>Welcome Andrew Hall!<br/>Monday June 23 2019<br/>
       
   </span>
-  <a href="#">Logout</a>
+
+  <!--<a href="#">Logout</a>-->
+  <a routerLink="/login">Login</a>
 </header>
 
 <div class="row tabs">
@@ -20,6 +22,10 @@
               <a href="#">Users</a>
               <a href="#">Master Data</a> 
       </div>
+
+
+
+      
       <!--{{% elif not logged in %}}
       <div class="col-sm-2 col-xs-4 sidenav">
 
@@ -32,5 +38,6 @@
       {{% endblock %}}-->
       <router-outlet></router-outlet>
   </div>
-
+  
 </div>
+
