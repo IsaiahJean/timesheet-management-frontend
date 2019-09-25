@@ -9,13 +9,8 @@ import { AdministrationComponent } from './administration/administration.compone
 import { TimeCardManagementComponent } from './time-card-management/time-card-management.component';
 import { ReportsComponent } from './reports/reports.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
-import { FormsModule} from '@angular/forms';
-
-=======
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
->>>>>>> darius
 
 
 @NgModule({
@@ -26,22 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
     AdministrationComponent,
     TimeCardManagementComponent,
     ReportsComponent,
-<<<<<<< HEAD
-    LoginComponent
-=======
     LoginComponent,
     
->>>>>>> darius
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
-    FormsModule
-=======
     FormsModule,
     HttpClientModule,
->>>>>>> darius
   ],
   providers: [],
   bootstrap: [AppComponent]

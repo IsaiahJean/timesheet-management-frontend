@@ -1,20 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-<<<<<<< HEAD
-import { AdministrationComponent } from './administration/administration.component';
-=======
 import { LoginComponent } from './login/login.component';
->>>>>>> darius
+import { TimeCardManagementComponent } from './time-card-management/time-card-management.component';
+import { ReportsComponent } from './reports/reports.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 const routes: Routes = [
 
-<<<<<<< HEAD
-const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: 'login', component: AdministrationComponent},
-=======
-  { path: 'login', component: LoginComponent}
->>>>>>> darius
+  { path: 'login', component: LoginComponent},
+  { path: 'timecard', component: TimeCardManagementComponent},
+  { path: 'reports', component: ReportsComponent},
+  { path: 'admin', component: AdministrationComponent}
 ];
 
 @NgModule({

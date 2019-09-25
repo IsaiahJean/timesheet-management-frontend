@@ -9,33 +9,36 @@
 </header>
 
 <div class="row tabs">
-    <button class="col-sm-3 maintabs" id="admintab" (click)="mainTabClick('admintab')">Administration</button>
-    <button class="col-sm-3 maintabs" id="timecardtab" (click)='mainTabClick("timecardtab")'>Time Card</button>
-    <button class="col-sm-3 maintabs" id="reportstab" (click)='mainTabClick("reportstab")'>Reports</button>
+    <a  routerLink="/admin" class="col-sm-3 maintabs focus" id="admintab" (click)="mainTabClick('admintab')">
+      Administration
+    </a>
+    <a routerLink="/timecard" class="col-sm-3 maintabs" id="timecardtab" (click)='mainTabClick("timecardtab")'>
+      Time Card
+    </a>
+    <a routerLink="/reports" class="col-sm-3 maintabs" id="reportstab" (click)='mainTabClick("reportstab")'>
+      Reports
+    </a>
     <button class="col-sm-3" disabled></button>
 </div>
 
 <div style="height:100%" class="container-fluid fill">
   <div style="height:100%" class="row fill">
        <!--{{% if user.is_superuser %}}-->
-      <div class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
-              <a href="#">Users</a>
-              <a href="#">Master Data</a> 
+      <div id="admin-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
+        <a href="#">Users</a>
+        <a href="#">Master Data</a> 
       </div>
 
 
 
       
-      <!--{{% elif not logged in %}}
-      <div class="col-sm-2 col-xs-4 sidenav">
-
+      <!--{{% elif not logged in %}}-->
+      <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
+          <a href="#">Users</a>
+          <a href="#">Master Data</a>
        </div>
-      {{% endif %}}
 
-      {{% block content %}}
 
-      {{% if error_message %}}<p><strong>{{ error_message }}</strong></p>{% endif %}
-      {{% endblock %}}-->
       <router-outlet></router-outlet>
   </div>
   
