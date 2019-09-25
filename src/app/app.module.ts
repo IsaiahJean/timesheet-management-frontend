@@ -11,15 +11,10 @@ import { AdministrationComponent } from './administration/administration.compone
 import { TimeCardManagementComponent } from './time-card-management/time-card-management.component';
 import { ReportsComponent } from './reports/reports.component';
 import { LoginComponent } from './login/login.component';
-<<<<<<< HEAD
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; 
-=======
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { from } from 'rxjs';
 
->>>>>>> dmitriy
 
 
 @NgModule({
@@ -38,14 +33,11 @@ import { from } from 'rxjs';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-<<<<<<< HEAD
-=======
     ReactiveFormsModule,
   ],
   providers: [
     UserServiceService,
     UserService,
->>>>>>> dmitriy
   ],
   bootstrap: [AppComponent]
 })

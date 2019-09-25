@@ -20,19 +20,6 @@ export class LoginComponent implements OnInit {
     };
   }
 
-<<<<<<< HEAD
-  onLogin(){
-    this.userService.loginUser(this.input).subscribe(response=> {
-      console.log(response)  
-      alert('User ' + this.input.username + ' loggedin.' );
-    },
-      error => {
-        console.log('error',error);
-      }
-      
-      );
-  }
-=======
   // onLogin(){
   //   this.userService.loginUser(this.input).subscribe(response=> {
   //     console.log(response)  
@@ -44,7 +31,6 @@ export class LoginComponent implements OnInit {
       
   //     );
   // }
->>>>>>> dmitriy
 
 
 
