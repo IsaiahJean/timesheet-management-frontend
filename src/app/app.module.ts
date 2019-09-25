@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { UserServiceService } from './user-service.service';
+import { UserService } from './user.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +11,15 @@ import { AdministrationComponent } from './administration/administration.compone
 import { TimeCardManagementComponent } from './time-card-management/time-card-management.component';
 import { ReportsComponent } from './reports/reports.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+=======
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
+import { from } from 'rxjs';
+
+>>>>>>> dmitriy
 
 
 @NgModule({
@@ -29,8 +38,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+<<<<<<< HEAD
+=======
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    UserServiceService,
+    UserService,
+>>>>>>> dmitriy
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,49 @@
+<<<<<<< HEAD
 <p>users works!</p>
+=======
+<a (click)="openForm()">Add User</a>
+<div *ngIf="showAddForm">
+    <form [formGroup]="addUser" (ngSubmit)="onAddSubmit()">
+        <label>
+            First Name:
+            <input type="text" formControlName="first_name" required>
+        </label>
+        <label>
+            Last Name:
+            <input type="text" formControlName="last_name" required>
+        </label><br>
+        <label>
+            Description:
+            <input type="text" formControlName="description" required>
+        </label><br>
+        <label>
+            Email/Login ID:
+            <input type="text" formControlName="username" required>
+        </label><br>
+        <label>
+            Password:
+            <input type="text" formControlName="password" required>
+        </label>
+        <label>
+            Re-Type Password:
+            <input type="text" formControlName="rePassword" required>
+        </label><br>
+        <button type="submit" [disabled]="!addUser.valid">Submit</button>
+        <button type="reset" (click)="openForm()">Cancel</button>
+    </form>
+</div>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;">
+            <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
+            <td>{{ user.description }}</td>
+            <td><button>Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+>>>>>>> dmitriy

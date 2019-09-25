@@ -38,6 +38,7 @@ body {
     top:70px;
 }
 
+<<<<<<< HEAD
 .tabs {
     text-align:center;
 }
@@ -61,6 +62,14 @@ body {
 
 .hidden {
     display: none;
+=======
+.tabs button {
+    width:100%;
+    min-height: 30px;
+    background: #F8F8F8;
+    color: blue;
+    outline:none;
+>>>>>>> dmitriy
 }
 
 /* side nav */
