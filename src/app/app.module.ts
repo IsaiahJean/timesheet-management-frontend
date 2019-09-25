@@ -8,6 +8,10 @@ import { MasterDataComponent } from './master-data/master-data.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { TimeCardManagementComponent } from './time-card-management/time-card-management.component';
 import { ReportsComponent } from './reports/reports.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { ReportsComponent } from './reports/reports.component';
     MasterDataComponent,
     AdministrationComponent,
     TimeCardManagementComponent,
-    ReportsComponent
+    ReportsComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
