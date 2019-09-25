@@ -7,12 +7,12 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  input;
+  employee;
 
   constructor(private userService:UserService) { }
 
   ngOnInit() {
-    this.input= {
+    this.employee= {
       username: '',
       password: '',
 
@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(){
-    this.userService.loginUser(this.input).subscribe(response=> {
+    this.userService.loginUser(this.employee).subscribe(response=> {
       console.log(response)  
-      alert('User ' + this.input.username + ' loggedin.' );
+      alert('User ' + this.employee.username + ' loggedin.' );
     },
       error => {
         console.log('error',error);
