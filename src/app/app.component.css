@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
 }
 
+/* header */
 .header {
     padding: 15px;
     background: #E8E8E8;
@@ -37,6 +38,22 @@ body {
     top:70px;
 }
 
+.tabs button {
+    width:100%;
+    min-height: 30px;
+    background: #F8F8F8;
+    color: blue;
+    outline:none;
+}
+
+/* side nav */
+.sidenavigation {
+    max-width: 150px;
+    text-align:center;
+}
+
+
+
 .sidenav {
     background: #F8F8F8;
     padding: 3px 3px 3px 3px;
@@ -58,6 +75,7 @@ body {
     color: blue;
 }
 
-li {
-    list-style-type: none;
+.fill { 
+    min-height: 100vh;
+    height: 100%;
 }
