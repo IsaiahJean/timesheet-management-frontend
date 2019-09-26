@@ -10,6 +10,11 @@ export class AdministrationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.showAdmin();
+  }
+  showAdmin(){
+    let sidebarNav = document.getElementById('admin-sidebar');
+    sidebarNav.classList.remove('hidden');
   }
 
 }

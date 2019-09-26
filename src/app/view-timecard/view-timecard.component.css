@@ -1,0 +1,11 @@
+.days{
+    min-height: 300px;
+}
+
+li {
+    padding: 15px;
+}
+
+.month {
+    max-height: 120px;
+}

@@ -1,0 +1,40 @@
+/*reports*/
+.reports {
+    max-width: 100%;
+    margin:0 auto;
+    margin-top:30px;
+    margin-left:40px;
+}
+
+
+.reports-row{
+    background: #E8E8E8;
+    position: relative;
+    left:-13px;
+    min-height: 300px;
+}
+
+
+#reports-table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+
+#reports-table td, #reports-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#reports-table tr:nth-child(even){
+    background-color: white;
+}
+
+#reports-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(13, 14, 13);
+    color: white;
+}

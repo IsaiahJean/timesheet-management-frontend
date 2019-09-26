@@ -1,0 +1,67 @@
+/*master data*/
+.master-data{
+    max-width: 100%;
+    margin:0 auto;
+    margin-top:30px;
+    margin-left:40px;
+}
+
+.masterdata-tabs {
+    text-align: center;
+}
+
+.master-data-row{
+    background: #E8E8E8;
+    position: relative;
+    left:-13px;
+    min-height: 300px;
+}
+.masterdata-tabs button {
+    background: black;
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 9px 9px 0px 0px;
+    border-bottom: none;
+    outline: none;
+}
+
+#add-location-link{
+    float:right;
+}
+
+#doctors-table,
+#location-table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+#doctors-table td, #doctors-table th,
+#location-table td, #location-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+#doctors-table tr:nth-child(even),
+#location-table tr:nth-child(even){
+    background-color: white;
+}
+
+#doctors-table th,
+#location-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(13, 14, 13);
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.focus {
+    background: #E8E8E8 !important;
+    color:black !important;
+}
