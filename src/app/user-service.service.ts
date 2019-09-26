@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Idescription, Iuser, Iuser_description } from './iuser';
+import { Idescription, Iuser, Iuser_description, IeditUser } from './iuser';
 import { Observable, throwError } from 'rxjs';
 
 
@@ -11,7 +11,7 @@ export class UserServiceService {
   private _url_for_all_users = 'http://127.0.0.1:8000/users/users/';
   private _url_post_new_user = 'http://127.0.0.1:8000/users/p_user/';
   private _url_get_user_by_username = 'http://127.0.0.1:8000/users/g_user/'; // Add corresponding username to the end
-  private _url_add_description = 'http://127.0.0.1:8000/users/add_description';
+  private _url_add_description = 'http://127.0.0.1:8000/users/add_description/';
   private _url_get_and_patch_description = 'http://127.0.0.1:8000/users/description/'; // Add corresponding id of user with description
   private _url_patch_get_delete_usere = 'http://127.0.0.1:8000/users/user/'; // Add corresponding id of user with description
 
@@ -47,7 +47,7 @@ export class UserServiceService {
 
   // Patch description
   patchDescription(id: number, description): Observable<Idescription> {
-    const url = `${this._url_get_and_patch_description}${id}`;
+    const url = `${this._url_get_and_patch_description}${id}/`;
     return this._http.patch<Idescription>(url, description);
   }
 
@@ -58,9 +58,9 @@ export class UserServiceService {
   }
 
   // Patch user
-  patchUser(id:number, user): Observable<Iuser> {
-    const url = `${this._url_patch_get_delete_usere}${id}`;
-    return this._http.patch<Iuser>(url, user);
+  patchUser(id:number, user): Observable<IeditUser> {
+    const url = `${this._url_patch_get_delete_usere}${id}/`;
+    return this._http.patch<IeditUser>(url, user);
   }
 
   // Delete user
