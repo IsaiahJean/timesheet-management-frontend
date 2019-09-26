@@ -14,8 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { from } from 'rxjs';
+<<<<<<< HEAD
 import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
 import { NewTimecardComponent } from './new-timecard/new-timecard.component';
+=======
+import { AddComponent } from './users/add/add.component';
+
+>>>>>>> 0ab9b02eb83bab14d864088425424c29e559a35f
 
 
 
@@ -28,9 +33,13 @@ import { NewTimecardComponent } from './new-timecard/new-timecard.component';
     TimeCardManagementComponent,
     ReportsComponent,
     LoginComponent,
+<<<<<<< HEAD
     ViewTimecardComponent,
     NewTimecardComponent,
     
+=======
+	AddComponent,
+>>>>>>> 0ab9b02eb83bab14d864088425424c29e559a35f
   ],
   imports: [
     BrowserModule,

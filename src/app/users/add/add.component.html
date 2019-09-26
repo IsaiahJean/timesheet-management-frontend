@@ -1,0 +1,30 @@
+<div *ngIf="showAddForm">
+    <form [formGroup]="addUser" (ngSubmit)="onAddSubmit()">
+        <label>
+            First Name:
+            <input type="text" formControlName="first_name" required>
+        </label>
+        <label>
+            Last Name:
+            <input type="text" formControlName="last_name" required>
+        </label><br>
+        <label>
+            Description:
+            <input type="text" formControlName="description" required>
+        </label><br>
+        <label>
+            Email/Login ID:
+            <input type="text" formControlName="username" required>
+        </label><br>
+        <label>
+            Password:
+            <input type="text" formControlName="password" required>
+        </label>
+        <label>
+            Re-Type Password:
+            <input type="text" formControlName="rePassword" required>
+        </label><br>
+        <button type="submit" [disabled]="!addUser.valid || matchPassword(addUser)">Submit</button>
+        <button type="reset" (click)="openForm()">Cancel</button>
+    </form>
+</div>
