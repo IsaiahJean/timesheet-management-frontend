@@ -1,6 +1,21 @@
 <a (click)="openForm()">Add User</a>
-<div *ngIf="showAddForm">
-    <form [formGroup]="addUser" (ngSubmit)="onAddSubmit()">
+<app-add [showAddForm]="showAddForm"></app-add>
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;">
+            <td><a (click)="openEditForm(user)">{{ user.user.first_name }} {{ user.user.last_name }}</a></td>
+            <td>{{ user.description }}</td>
+            <td><button (click)="deleteUser(user)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="showEditForm">
+    <form [formGroup]="editUser" (ngSubmit)="onEditSubmit()">
         <label>
             First Name:
             <input type="text" formControlName="first_name" required>
@@ -19,27 +34,14 @@
         </label><br>
         <label>
             Password:
-            <input type="text" formControlName="password" required>
+            <input type="text" formControlName="password">
         </label>
         <label>
             Re-Type Password:
-            <input type="text" formControlName="rePassword" required>
+            <input type="text" formControlName="rePassword">
         </label><br>
-        <button type="submit" [disabled]="!addUser.valid">Submit</button>
-        <button type="reset" (click)="openForm()">Cancel</button>
+        <button type="submit" [disabled]="!editUser.valid || matchPassword(editUser)">Save</button>
+        <button type="reset" (click)="openEditForm()">Cancel</button>
+
     </form>
 </div>
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users;">
-            <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
-            <td>{{ user.description }}</td>
-            <td><button>Delete</button></td>
-        </tr>
-    </tbody>
-</table>

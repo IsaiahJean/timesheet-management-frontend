@@ -38,12 +38,29 @@ body {
     top:70px;
 }
 
-.tabs button {
+.tabs {
+    text-align:center;
+}
+
+.tabs button,
+.tabs a {
     width:100%;
     min-height: 30px;
     background: #F8F8F8;
-    color: blue;
+    color: black;
     outline:none;
+    border: solid grey .1px;
+    border-top: #E8E8E8;
+}
+
+.focus {
+    background: #ffffff !important;
+    border-bottom: none !important;
+    color:blue !important;
+}
+
+.hidden {
+    display: none;
 }
 
 /* side nav */

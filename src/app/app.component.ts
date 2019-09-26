@@ -10,14 +10,11 @@ export class AppComponent {
 
   mainTabClick(tabid) {
     let maintabs = document.getElementsByClassName("maintabs");
+
     for (let i = 0; i < maintabs.length; i++) {
-      maintabs[i].style.background = "#F8F8F8";
+      maintabs[i].classList.remove("focus");
     }
-    document.getElementById(tabid).style.background = '#ffffff';
+    document.getElementById(tabid).classList.add("focus");
   }
-
-  timecardClick() {}
-
-  reportsClick() {}
-
+  
 }
