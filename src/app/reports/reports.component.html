@@ -1,11 +1,3 @@
-<select style="margin-top:30px;" name="report-type">
-
-    <option>All</option>
-    <option>here</option>
-    <option>there</option>
-    
-</select>
-
 <div class="reports">
 
 
@@ -14,24 +6,32 @@
         <div style="text-align: center; padding:10px;">
             <span><strong>All Employees Work Hours</strong></span><br> 
             <span><strong>Date to Date</strong></span><br>
-            <span style="float:left;">Date created: <span>Date</span></span>
+            <span style="float:left;">Date created: <span>{{ date_val | date:'longDate' }}</span></span>
         </div>
 
-        <table id="reports-table">
+        <table matSort (matSortChange)="sortData($event)" id="reports-table">
             <tr>
-                <th style="width:20%">Name</th>
-                <th style="width:20%">Time In</th>
-                <th style="width:20%">Time Out</th>
-                <th style="width:20%">Location</th>
-                <th style="width:20%">Sector</th>
+                <th mat-sort-header='date' style="width:15%">Date</th>
+                <th mat-sort-header='name' style="width:15%">Name (File Number)</th>
+                <th mat-sort-header='time_in' style="width:14%">Time In</th>
+                <th mat-sort-header='time_out' style="width:14%">Time Out</th>
+                <th mat-sort-header='location' style="width:15%">Location</th>
+                <th mat-sort-header='sector' style="width:14%">Sector</th>
+                <th mat-sort-header='hours_code' style="width:14%">Hour Code</th>
+                <th mat-sort-header='hours_worked' style="width:14%">Work Hours</th>
             </tr>
                 <!--for eve of event %}-->
-            <tr>
-                <td>Name</td>
-                <td>Time In</td>
-                <td>Time Out</td>
-                <td>Location</td>
-                <td>Sector</td>
+            <tr *ngFor="let card of sortedData;">
+                <td>{{ card.date }}</td>
+                <td>{{ card.file_number.first_Name }} {{ card.file_number.last_Name }}
+                     ({{ card.file_number.id }})
+                </td>
+                <td>{{ card.time_in }} {{ card.daytime_in }}</td>
+                <td>{{ card.time_out }} {{ card.daytime_out }}</td>
+                <td>{{ card.location }}</td>
+                <td>{{ card.sector }}</td>
+                <td>{{ card.hours_code }}</td>
+                <td>{{ card.hours_worked }}</td>
             </tr>
         </table>
 

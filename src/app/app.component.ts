@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent{
   title = 'timesheet-management';
 
+  date_val = new Date();
 
   mainTabClick(tabid, sidenavid) {
     let maintabs = document.getElementsByClassName("maintabs");
