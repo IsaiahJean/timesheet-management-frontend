@@ -1,15 +1,25 @@
 
 <header class="header">
   <h3><strong>TIMECARD</strong><br/><span style="font-size: 20px;">Data Entry System</span></h3>
+<<<<<<< HEAD
   <span>Welcome Andrew Hall!<br/>{{ date_val | date:'fullDate' }}<br/>
       
+=======
+  
+  
+  
+  <span>Welcome Andrew Hall!<br/>Monday June 23 2019<br/>
+     
+>>>>>>> darius
   </span>
 
   <!--<a href="#">Logout</a>-->
+  
   <a routerLink="/login">Login</a>
 </header>
 
 <div class="row tabs">
+<<<<<<< HEAD
     <a  routerLink="/admin" class="col-sm-3 maintabs" id="admintab" 
     (click)="mainTabClick('admintab','admin-sidebar')">
       Administration
@@ -23,14 +33,29 @@
       Reports
     </a>
     <button style="border-radius: 0px;" class="col-sm-3" disabled></button>
+=======
+    <button class="col-sm-3 maintabs" id="admintab" (click)="mainTabClick('admintab')">Administration</button>
+    <button class="col-sm-3 maintabs" id="timecardtab" (click)='mainTabClick("timecardtab")'>Time Card</button>
+    <button class="col-sm-3 maintabs" id="reportstab" (click)='mainTabClick("reportstab")'>Reports</button>
+    <button (click)="onLogout()">Logout</button>
+    <button class="col-sm-3" disabled></button>
+>>>>>>> darius
 </div>
 
 <div style="height:100%" class="container-fluid fill">
   <div style="height:100%" class="row fill">
+<<<<<<< HEAD
 
       <div id="admin-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
         <a routerLink="/users">Users</a>
         <a routerLink="/master-data">Master Data</a> 
+=======
+       <!--{{% if user.is_superuser %}}-->
+      <div class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
+              <a routerLink="/users">Users</a>
+              
+              <a routerLink="/master">Master Data</a>    
+>>>>>>> darius
       </div>
 
       <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
@@ -38,6 +63,7 @@
           <a routerLink="/new-timecard">New Time Card</a>
        </div>
 
+<<<<<<< HEAD
        <div id="reports-sidebar" class="col-sm-2 col-xs-12 sidenav fill sidenavigation">
       
        </div>
@@ -45,6 +71,24 @@
       <div class="col-sm-10 col-xs-12">
         <router-outlet></router-outlet>
       </div>
+=======
+
+      
+      <!--{{% elif not logged in %}}
+      <div class="col-sm-2 col-xs-4 sidenav">
+
+      
+      {{% elif not logged in %}}-->
+      <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
+          <a href="#">Users</a>
+          <a href="#">Master Data</a>
+       </div>
+
+
+      <!--{{% if error_message %}}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      {{% endblock %}}-->
+      <router-outlet></router-outlet>
+>>>>>>> darius
   </div>
   
 </div>
