@@ -17,12 +17,8 @@ import { from } from 'rxjs';
 import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
 import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { AddComponent } from './users/add/add.component';
-<<<<<<< HEAD
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort'
-=======
-
->>>>>>> f9b051cc9881ab9521b94a5f3ea598981dd8ab8a
 
 
 
