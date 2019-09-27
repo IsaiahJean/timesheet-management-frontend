@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
 import { UserServiceService } from './../user-service.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { Iuser, Idescription, Iuser_description } from './../iuser';
->>>>>>> dmitriy
 
 @Component({
   selector: 'app-users',
@@ -13,11 +10,6 @@ import { Iuser, Idescription, Iuser_description } from './../iuser';
 })
 export class UsersComponent implements OnInit {
 
-<<<<<<< HEAD
-  constructor() { }
-
-  ngOnInit() {
-=======
   addUser = this._fb.group({
     first_name: ['', Validators.required],
     last_name: ['', Validators.required],
@@ -58,7 +50,6 @@ export class UsersComponent implements OnInit {
     ).subscribe(
       () => this.openForm()
     );
->>>>>>> dmitriy
   }
 
 }

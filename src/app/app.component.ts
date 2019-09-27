@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service';
+import { Routes, RouterModule, Router } from '@angular/router';
 
 
 @Component({
@@ -10,20 +11,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'timesheet-management';
 
+  constructor( private cookieService: CookieService, private router: Router ) { }
+
+
+  onLogout():void{
+    this.cookieService.delete('e-token');
+    this.router.navigate(['/login']);
+  }
+
+
+
   mainTabClick(tabid) {
     let maintabs = document.getElementsByClassName("maintabs");
-<<<<<<< HEAD
-    let sidenav = document.getElementsByClassName("sidenavigation");
-
     for (let i = 0; i < maintabs.length; i++) {
-      maintabs[i].classList.remove("focus");
-    }
-    document.getElementById(tabid).classList.add("focus");
-  }
-  
-=======
-    for (let i = 0; i < maintabs.length; i++) {
-      maintabs[i].style.background = "#F8F8F8";
+      //maintabs[i].style.background = "#F8F8F8";
     }
     document.getElementById(tabid).style.background = '#ffffff';
   }
@@ -32,5 +33,4 @@ export class AppComponent {
 
   reportsClick() {}
 
->>>>>>> dmitriy
 }

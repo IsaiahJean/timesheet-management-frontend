@@ -1,1 +1,25 @@
-<p>master-data works!</p>
+
+ <table class="table table-hover">
+    <thead>
+        <tr>
+            
+            <th>Sector</th>
+            <th>Location</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let location of locations">
+            
+            <td>{{location.sector}}</td>
+            <td>{{location.location}}</td>
+            
+           
+           
+           
+        </tr>
+        
+    </tbody>
+   
+ </table>
+ 
