@@ -1,0 +1,60 @@
+/* edit user*/
+#add-user-table {
+    max-width: 60%;
+    margin:0 auto;
+    margin-top:30px;
+    margin-left:100px;
+    border: solid grey .1px;
+    background:  #E8E8E8;
+    padding: 55px;
+    border-radius: 1.5em;
+    box-shadow: 0px 5px 4px 2px rgba(112, 111, 111, 0.918);
+}
+
+#add-user-table label {
+    margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+
+#add-user-table input {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+    margin:0px;
+    transition: all 0.30s ease-in-out;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;	
+}
+
+
+#add-user-table .field-long {
+    width: 95%;
+}
+
+
+#add-user-table button{
+	background: rgb(20, 75, 177);
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    margin-left: 10px;
+    box-shadow: 2px 2px#BEBEBE;
+}
+
+#add-user-table button:hover{
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+
+#add-user-table .required{
+	color:red;
+}
