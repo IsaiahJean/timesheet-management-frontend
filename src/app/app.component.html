@@ -1,15 +1,16 @@
 
 <header class="header">
-  <h3><strong>TIMECARD</strong><br/><span style="font-size: 20px;">Data Entry System</span></h3>
+  <h3><strong>TIMECARD</strong><br/><span style="font-size: 20px;">
+    <strong>Data Entry System</strong></span>
+  </h3>
   <span>Welcome Andrew Hall!<br/>Monday June 23 2019<br/>
       
   </span>
 
   <!--<a href="#">Logout</a>-->
-  <a routerLink="/login" (click)="hideAllClick()">Login</a>
+  <a routerLink="/login">Login</a>
 </header>
 
-<div id="all">
 <div class="row tabs">
     <a  routerLink="/admin" class="col-sm-3 maintabs" id="admintab" 
     (click)="mainTabClick('admintab','admin-sidebar')">
@@ -28,31 +29,28 @@
 
 <div style="height:100%" class="container-fluid fill">
   <div style="height:100%" class="row fill">
-       <!--{{% if user.is_superuser %}}-->
 
       <div id="admin-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
         <a routerLink="/users">Users</a>
         <a routerLink="/master-data">Master Data</a> 
       </div>
-      
-      
-      <!--{{% elif not logged in %}}-->
+
       <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
           <a routerLink="/view-timecard">View Time Card</a>
           <a routerLink="/new-timecard">New Time Card</a>
        </div>
 
-       <div id="reports-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation">
+       <div id="reports-sidebar" class="col-sm-2 col-xs-12 sidenav fill sidenavigation">
       
        </div>
     
-      <div class="col-sm-10">
+      <div class="col-sm-10 col-xs-12">
         <router-outlet></router-outlet>
       </div>
   </div>
   
 </div>
-</div>
+
 
 
 

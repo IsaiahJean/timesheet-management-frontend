@@ -1,61 +1,52 @@
-<a (click)="openForm()">Add User</a>
+<a id="add-user" (click)="openForm()">Add User</a>
 <app-add [showAddForm]="showAddForm"></app-add>
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
+<div class="users-display" id="users">
+
+    <table id='users-table'>
+        <tr>
+            <th style="width:40%">Name</th>
+            <th style="width:40%">Description</th>
+            <th style="width:20%">Delete</th>
+        </tr>
+
         <tr *ngFor="let user of users;">
             <td><a (click)="openEditForm(user)">{{ user.user.first_name }} {{ user.user.last_name }}</a></td>
             <td>{{ user.description }}</td>
-            <td><button (click)="deleteUser(user)">Delete</button></td>
+            <td style="text-align:center"><button (click)="deleteUser(user)">Delete</button></td>
         </tr>
-    </tbody>
-</table>
-<div *ngIf="showEditForm">
+
+    </table>
+
+</div>
+
+
+<div class="users-display"  id="edit-user" *ngIf="showEditForm">
     <form [formGroup]="editUser" (ngSubmit)="onEditSubmit()">
         <label>
-            First Name:
-            <input type="text" formControlName="first_name" required>
-        </label>
-        <label>
-            Last Name:
-            <input type="text" formControlName="last_name" required>
+            Full Name:<br>
+            <input style="margin-right:30px;" class="field-divided" type="text" 
+            formControlName="first_name" placeholder="First" required>
+
+            <input class="field-divided"type="text" 
+            formControlName="last_name" placeholder="Last" required>
         </label><br>
         <label>
-            Description:
-            <input type="text" formControlName="description" required>
+            Description:<br>
+            <input placeholder="description" class="field-long" type="text" formControlName="description" required>
         </label><br>
         <label>
-            Email/Login ID:
-            <input type="text" formControlName="username" required>
+            Email/Login ID:<br>
+            <input placeholder="Email" class="field-long" type="text" formControlName="username" required>
         </label><br>
         <label>
-            Password:
-            <input type="text" formControlName="password">
-        </label>
-        <label>
-            Re-Type Password:
-            <input type="text" formControlName="rePassword">
+            Password:<br>
+            <input style="margin-right:30px;"  class="field-divided" type="text" 
+            formControlName="password" placeholder="Type Password">
+
+            <input class="field-divided" placeholder="Re-type Password" type="text" formControlName="rePassword">
         </label><br>
         <button type="submit" [disabled]="!editUser.valid || matchPassword(editUser)">Save</button>
         <button type="reset" (click)="openEditForm()">Cancel</button>
 
     </form>
 </div>
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users;">
-            <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
-            <td>{{ user.description }}</td>
-            <td><button>Delete</button></td>
-        </tr>
-    </tbody>
-</table>
