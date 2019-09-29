@@ -1,24 +1,5 @@
 <a id="add-user" (click)="openForm()">Add User</a>
 <app-add [showAddForm]="showAddForm"></app-add>
-<div class="users-display" id="users">
-
-    <table id='users-table'>
-        <tr>
-            <th style="width:40%">Name</th>
-            <th style="width:40%">Description</th>
-            <th style="width:20%">Delete</th>
-        </tr>
-
-        <tr *ngFor="let user of users;">
-            <td><a (click)="openEditForm(user)">{{ user.user.first_name }} {{ user.user.last_name }}</a></td>
-            <td>{{ user.description }}</td>
-            <td style="text-align:center"><button (click)="deleteUser(user)">Delete</button></td>
-        </tr>
-
-    </table>
-
-</div>
-
 
 <div class="users-display"  id="edit-user" *ngIf="showEditForm">
     <form [formGroup]="editUser" (ngSubmit)="onEditSubmit()">
@@ -50,3 +31,22 @@
 
     </form>
 </div>
+<div class="users-display" id="users">
+
+    <table id='users-table'>
+        <tr>
+            <th style="width:40%">Name</th>
+            <th style="width:40%">Description</th>
+            <th style="width:20%">Delete</th>
+        </tr>
+
+        <tr *ngFor="let user of users;">
+            <td><a (click)="openEditForm(user)">{{ user.user.first_name }} {{ user.user.last_name }}</a></td>
+            <td>{{ user.description }}</td>
+            <td style="text-align:center"><button (click)="deleteUser(user)">Delete</button></td>
+        </tr>
+
+    </table>
+
+</div>
+

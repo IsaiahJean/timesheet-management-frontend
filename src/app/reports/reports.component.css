@@ -26,6 +26,7 @@
     padding: 8px;
   }
 
+
 #reports-table tr:nth-child(even){
     background-color: white;
 }

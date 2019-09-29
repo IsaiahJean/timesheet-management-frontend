@@ -1,0 +1,53 @@
+
+<header class="header">
+    <div style=float:left;>
+        <img style="height:40px;width:40px;" src="http://www.aprilloturnercommunications.com/tc_logo.png">
+         <strong style="padding-right:20px;">TIMECARD</strong><br>
+        Data Entry System
+    </div>
+    <div style="float:right"> 
+        Welcome Andrew Hall!<br>
+        {{ date_val | date:'fullDate' }}
+        <a style="margin-left:10px;" routerLink="/login">Logout</a>
+    </div> 
+</header>
+    
+    <div class="row tabs">
+        <a  routerLink="/admin" class="col-sm-3 maintabs" id="admintab" 
+        (click)="mainTabClick('admintab','admin-sidebar')">
+        Administration
+        </a>
+        <a routerLink="/timecard" class="col-sm-3 maintabs" id="timecardtab" 
+        (click)='mainTabClick("timecardtab","timecard-sidebar")'>
+        Time Card
+        </a>
+        <a routerLink="/reports" class="col-sm-3 maintabs" id="reportstab" 
+        (click)='mainTabClick("reportstab", "reports-sidebar")'>
+        Reports
+        </a>
+        <button style="border-radius: 0px;" class="col-sm-3" disabled></button>
+    </div>
+    
+    <div style="height:100%" class="container-fluid fill">
+    <div style="height:100%" class="row fill">
+    
+        <div id="admin-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
+            <a routerLink="/users">Users</a>
+            <a routerLink="/master-data">Master Data</a> 
+        </div>
+    
+        <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
+            <a routerLink="/view-timecard">View Time Card</a>
+            <a routerLink="/new-timecard">New Time Card</a>
+            </div>
+    
+            <div id="reports-sidebar" class="col-sm-2 col-xs-12 sidenav fill sidenavigation">
+        
+            </div>
+        
+        <div class="col-sm-9 col-xs-12">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    </div>

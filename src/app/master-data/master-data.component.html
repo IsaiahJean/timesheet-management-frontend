@@ -15,26 +15,33 @@
 
     <div class="master-data-row">
 
-        <div style="padding:10px;">
-            Find Location: <input type="text">
-            <a id="add-location-link" href="#">Add Location</a>
+        <div class="masterdata-table" id="location-table">
+            <div style="padding:10px;">
+                Find Location: <input type="text">
+                <a id="add-location-link" href="#">Add Location</a>
+            </div>
+
+            <table>
+                <tr>
+                    <th style="width:60%">Location</th>
+                    <th style="width:30%">Sector</th>
+                    <th style="width:10%">Delete</th>
+                </tr>
+                    <!--for eve of event %}-->
+                <tr>
+                    <td><a href="#">Location</a></td>
+                    <td>Sector</td>
+                    <td style="text-align: center;"><input type="checkbox"></td>
+                </tr>
+            </table>
         </div>
 
-        <table class="masterdata-table" id="location-table">
-            <tr>
-                <th style="width:60%">Location</th>
-                <th style="width:30%">Sector</th>
-                <th style="width:10%">Delete</th>
-            </tr>
-                <!--for eve of event %}-->
-            <tr>
-                <td><a href="#">Location</a></td>
-                <td>Sector</td>
-                <td style="text-align: center;"><input type="checkbox"></td>
-            </tr>
-        </table>
-
-        <table  class="masterdata-table hidden" id="doctors-table">
+        <div class="masterdata-table hidden" id="doctors-table">
+                <div style="padding:10px;">
+                        Find Doctor: <input type="text">
+                        <a id="add-location-link" href="#">Add Doctor</a>
+                    </div>
+            <table>
                 <tr>
                     <th style="width:30%">First Name</th>
                     <th style="width:30%">Last name</th>
@@ -49,6 +56,6 @@
                     <td style="text-align: center;"><input type="checkbox"></td>
                 </tr>
             </table>
-
+        </div>
     </div>
 </div>

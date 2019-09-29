@@ -10,7 +10,7 @@ import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { MasterDataComponent } from './master-data/master-data.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent},
   { path: 'timecard', component: ViewTimecardComponent},
   { path: 'reports', component: ReportsComponent},

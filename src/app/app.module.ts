@@ -18,7 +18,8 @@ import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
 import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { AddComponent } from './users/add/add.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSortModule } from '@angular/material/sort'
+import { MatSortModule } from '@angular/material/sort';
+import { HomeComponent } from './home/home.component'
 
 
 
@@ -35,6 +36,8 @@ import { MatSortModule } from '@angular/material/sort'
     NewTimecardComponent,
     
 	AddComponent,
+    
+	HomeComponent,
   ],
   imports: [
     BrowserModule,
