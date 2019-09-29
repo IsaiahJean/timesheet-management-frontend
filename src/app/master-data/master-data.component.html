@@ -1,26 +1,33 @@
-<<<<<<< HEAD
 <h1>Master Data</h1>
 
 <div class="master-data">
 
     <div class="row masterdata-tabs">
         <button id="location-tab" class="masterdata-tab focus"
-        (click)="masterdataTabClick('location-tab', 'location-table')">
+        (click)="masterdataTabClick('location-tab', 'location-table')"
+        (click)="switch2()">
             Locations
         </button>
         <button id="doctors-tab" class="masterdata-tab"
-        (click)="masterdataTabClick('doctors-tab', 'doctors-table')">
+        (click)="masterdataTabClick('doctors-tab', 'doctors-table')"
+        (click)="switch1()">
             Doctors
         </button>
     </div>
 
     <div class="master-data-row">
-
+        <h2 *ngIf="location; else nameElseBlock">
         <div style="padding:10px;">
             Find Location: <input type="text">
             <a id="add-location-link" href="#">Add Location</a>
         </div>
-
+        </h2>
+        <ng-template #nameElseBlock>
+        <div style="padding:10px;">
+                Find Doctor: <input type="text">
+                <a id="add-location-link" href="#">Add Doctor</a>
+            </div>
+        </ng-template>
         <table class="masterdata-table" id="location-table">
             <tr>
                 <th style="width:60%">Location</th>
@@ -28,9 +35,10 @@
                 <th style="width:10%">Delete</th>
             </tr>
                 <!--for eve of event %}-->
-            <tr>
-                <td><a href="#">Location</a></td>
-                <td>Sector</td>
+                
+            <tr *ngFor= "let loc of locations">
+                <td>{{loc.location}}</td>
+                <td>{{loc.sector}}</td>
                 <td style="text-align: center;"><input type="checkbox"></td>
             </tr>
         </table>
@@ -43,40 +51,13 @@
                     <th style="width:10%">Delete</th>
                 </tr>
                     <!--for eve of event %}-->
-                <tr>
-                    <td><a href="#">First Name</a></td>
-                    <td><a href="#">Last Name</a></td>
-                    <td>File Number</td>
+                <tr *ngFor="let doc of doctors">
+                    <td>{{doc.first_Name}}</td>
+                    <td>{{doc.last_Name}}</td>
+                    <td>{{doc.pay_roll}}</td>
                     <td style="text-align: center;"><input type="checkbox"></td>
                 </tr>
             </table>
 
     </div>
 </div>
-=======
-
- <table class="table table-hover">
-    <thead>
-        <tr>
-            
-            <th>Sector</th>
-            <th>Location</th>
-        
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let location of locations">
-            
-            <td>{{location.sector}}</td>
-            <td>{{location.location}}</td>
-            
-           
-           
-           
-        </tr>
-        
-    </tbody>
-   
- </table>
- 
->>>>>>> darius

@@ -21,27 +21,6 @@ export class LoginComponent implements OnInit {
     private cookieService:CookieService, private router: Router) { }
 
   ngOnInit() {
-<<<<<<< HEAD
-    this.input= {
-      username: '',
-      password: '',
-
-
-    };
-  }
-
-  // onLogin(){
-  //   this.userService.loginUser(this.input).subscribe(response=> {
-  //     console.log(response)  
-  //     alert('User ' + this.input.username + ' loggedin.' );
-  //   },
-  //     error => {
-  //       console.log('error',error);
-  //     }
-      
-  //     );
-  // }
-=======
     this.employee={
       username:'',
       password:''
@@ -66,7 +45,6 @@ export class LoginComponent implements OnInit {
     
 
   
->>>>>>> darius
 
   
 
@@ -74,7 +52,7 @@ export class LoginComponent implements OnInit {
       this.userService.loginUser(this.employee).subscribe(response => {
         console.log(response);
         this.cookieService.set('e-token', response.token);
-        this.router.navigate(['/master']);
+        this.router.navigate(['/master-data']);
         alert('User ' + this.employee.username + ' loggedin.' );
         
       },

@@ -38,7 +38,7 @@ export class AddComponent implements OnInit {
     this._userService.postUser(this.addUser.value).subscribe();
     console.log('user created');
     
-    await delay(200);
+    await delay(300);
     
     var tempUser: Iuser;
     console.log('getting user');
@@ -47,7 +47,7 @@ export class AddComponent implements OnInit {
     ).subscribe((data) => tempUser = data);
     console.log('have got a user');
     
-    await delay(200);
+    await delay(300);
     
     console.log(tempUser);
     

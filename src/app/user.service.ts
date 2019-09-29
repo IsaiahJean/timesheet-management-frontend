@@ -5,6 +5,8 @@ import { HttpClientModule, HttpHeaders} from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { ILocation } from './location'
+import { IDoctor } from './doctor';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +16,10 @@ import { ILocation } from './location'
 
 export class UserService {
   baseUrl = 'http://127.0.0.1:8000/';
-  baseLocationUrl= `${this.baseUrl}locations/`;
+  baseLocationUrl= 'http://127.0.0.1:8000/locations/';
   apiUrl='http://127.0.0.1:8000/';
+  doctorUrl='http://127.0.0.1:8000/doctors/';
+  
   token = this.cookieService.get('e-token');
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -25,13 +29,19 @@ export class UserService {
   constructor(private http: HttpClient, private cookieService:CookieService) { }
 
   getLocations(): Observable<ILocation[]>{
-    return this.http.get<ILocation[]>(`${this.baseLocationUrl}`,{headers: this.getAuthHeaders()}
+    return this.http.get<ILocation[]>(this.baseLocationUrl,{headers: this.getAuthHeaders()}
       );
   }
 
   
  loginUser(userData): Observable<any>{
     return this.http.post('http://127.0.0.1:8000/auth/',userData)
+ }
+
+ getDoctors(): Observable<IDoctor[]>{
+  return this.http.get<IDoctor[]>(this.doctorUrl,{headers: this.getAuthHeaders()}
+  );
+
  }
 
 

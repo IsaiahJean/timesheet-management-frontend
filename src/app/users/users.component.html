@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <a id="add-user" (click)="openForm()">Add User</a>
 <app-add [showAddForm]="showAddForm"></app-add>
 <div class="users-display" id="users">
@@ -23,15 +22,6 @@
 
 <div class="users-display"  id="edit-user" *ngIf="showEditForm">
     <form [formGroup]="editUser" (ngSubmit)="onEditSubmit()">
-=======
-<a (click)="openForm()">Add User</a>
-<div *ngIf="showAddForm">
-    <form [formGroup]="addUser" (ngSubmit)="onAddSubmit()">
-        <label>
-            First Name:
-            <input type="text" formControlName="first_name" required>
-        </label>
->>>>>>> darius
         <label>
             Full Name:<br>
             <input style="margin-right:30px;" class="field-divided" type="text" 
@@ -60,20 +50,3 @@
 
     </form>
 </div>
-<<<<<<< HEAD
-=======
-<table>
-    <thead>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users;">
-            <td>{{ user.user.first_name }} {{ user.user.last_name }}</td>
-            <td>{{ user.description }}</td>
-            <td><button>Delete</button></td>
-        </tr>
-    </tbody>
-</table>
->>>>>>> darius

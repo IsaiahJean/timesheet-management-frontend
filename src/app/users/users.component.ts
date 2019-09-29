@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { UserServiceService } from './../user-service.service';
 import { Iuser_description, IeditUser } from '../iuser';
-=======
-import { UserServiceService } from './../user-service.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { Iuser, Idescription, Iuser_description } from './../iuser';
->>>>>>> darius
 
 @Component({
   selector: 'app-users',
@@ -16,17 +10,10 @@ import { Iuser, Idescription, Iuser_description } from './../iuser';
 })
 export class UsersComponent implements OnInit {
 
-<<<<<<< HEAD
   editUser = this._fb.group({
     first_name:['', Validators.required],
     last_name:['', Validators.required],
     description:['', Validators.required],
-=======
-  addUser = this._fb.group({
-    first_name: ['', Validators.required],
-    last_name: ['', Validators.required],
-    description: ['', Validators.required],
->>>>>>> darius
     username: ['', Validators.required],
     password: [''],
     rePassword: [''],
@@ -98,7 +85,6 @@ export class UsersComponent implements OnInit {
         location.reload();
       }
     );
-<<<<<<< HEAD
     console.log('done2');
   }
 
@@ -107,8 +93,6 @@ export class UsersComponent implements OnInit {
       this.users = this.users.filter(h => h !== user);
       this._userService.deleteUser(user.id).subscribe(() => console.log("Deleted"));
     }
-=======
->>>>>>> darius
   }
 
 }
