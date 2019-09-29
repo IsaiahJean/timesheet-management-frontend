@@ -1,14 +1,10 @@
-<div style="text-align:center">
+<div class="main">
     <h1>
         Login
     </h1>
-
-    <input [(ngModel)] ="input.username" placeholder="Username">
-    <br>
-    <input [(ngModel)] ="input.password" type="password" placeholder="Password">
-    <br>
-
-    <button (click)="onLogin()">Login</button>
-
-
+        <input [(ngModel)]="employee.username" placeholder="username">
+        <br>
+        <input [(ngModel)]="employee.password" placeholder="password">
+        <br>
+        <button (click)="onLogin()">Login</button>
 </div>

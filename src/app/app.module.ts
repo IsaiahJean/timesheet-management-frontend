@@ -14,9 +14,13 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { from } from 'rxjs';
+import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
+import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { AddComponent } from './users/add/add.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSortModule } from '@angular/material/sort'
 
-
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -28,6 +32,9 @@ import { AddComponent } from './users/add/add.component';
     TimeCardManagementComponent,
     ReportsComponent,
     LoginComponent,
+    ViewTimecardComponent,
+    NewTimecardComponent,
+    
 	AddComponent,
   ],
   imports: [
@@ -36,10 +43,13 @@ import { AddComponent } from './users/add/add.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NoopAnimationsModule,
+    MatSortModule,
   ],
   providers: [
     UserServiceService,
     UserService,
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })
