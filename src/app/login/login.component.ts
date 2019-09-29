@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Routes, RouterModule, Router } from '@angular/router';
+import { FormGroup, FormControl, FormControlName, FormControlDirective,ReactiveFormsModule } from '@angular/forms';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -7,30 +13,56 @@ import { UserService } from '../user.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  input;
+  employee;
+  
 
-  constructor(private userService:UserService) { }
+
+  constructor(private userService:UserService,
+    private cookieService:CookieService, private router: Router) { }
 
   ngOnInit() {
-    this.input= {
-      username: '',
-      password: '',
+    this.employee={
+      username:'',
+      password:''
 
 
-    };
-  }
+    }
 
-  // onLogin(){
-  //   this.userService.loginUser(this.input).subscribe(response=> {
-  //     console.log(response)  
-  //     alert('User ' + this.input.username + ' loggedin.' );
-  //   },
-  //     error => {
-  //       console.log('error',error);
-  //     }
+
+   
+     
+
+    
+
+
+
+    }
+    
+    
+     
       
-  //     );
-  // }
+        
+    
 
+  
 
+  
+
+    onLogin(){
+      this.userService.loginUser(this.employee).subscribe(response => {
+        console.log(response);
+        this.cookieService.set('e-token', response.token);
+        this.router.navigate(['/master-data']);
+        alert('User ' + this.employee.username + ' loggedin.' );
+        
+      },
+        error => {
+          console.log('error',error);
+        }
+      
+       );
+    }
 }
+
+
+

@@ -4,16 +4,19 @@
 
     <div class="row masterdata-tabs">
         <button id="location-tab" class="masterdata-tab focus"
-        (click)="masterdataTabClick('location-tab', 'location-table')">
+        (click)="masterdataTabClick('location-tab', 'location-table')"
+        (click)="switch2()">
             Locations
         </button>
         <button id="doctors-tab" class="masterdata-tab"
-        (click)="masterdataTabClick('doctors-tab', 'doctors-table')">
+        (click)="masterdataTabClick('doctors-tab', 'doctors-table')"
+        (click)="switch1()">
             Doctors
         </button>
     </div>
 
     <div class="master-data-row">
+<<<<<<< HEAD
 
         <div class="masterdata-table" id="location-table">
             <div style="padding:10px;">
@@ -35,6 +38,34 @@
                 </tr>
             </table>
         </div>
+=======
+        <h2 *ngIf="location; else nameElseBlock">
+        <div style="padding:10px;">
+            Find Location: <input type="text">
+            <a id="add-location-link" href="#">Add Location</a>
+        </div>
+        </h2>
+        <ng-template #nameElseBlock>
+        <div style="padding:10px;">
+                Find Doctor: <input type="text">
+                <a id="add-location-link" href="#">Add Doctor</a>
+            </div>
+        </ng-template>
+        <table class="masterdata-table" id="location-table">
+            <tr>
+                <th style="width:60%">Location</th>
+                <th style="width:30%">Sector</th>
+                <th style="width:10%">Delete</th>
+            </tr>
+                <!--for eve of event %}-->
+                
+            <tr *ngFor= "let loc of locations">
+                <td>{{loc.location}}</td>
+                <td>{{loc.sector}}</td>
+                <td style="text-align: center;"><input type="checkbox"></td>
+            </tr>
+        </table>
+>>>>>>> a244edf339630b17e36b80b3c74bc8a951712809
 
         <div class="masterdata-table hidden" id="doctors-table">
                 <div style="padding:10px;">
@@ -49,10 +80,10 @@
                     <th style="width:10%">Delete</th>
                 </tr>
                     <!--for eve of event %}-->
-                <tr>
-                    <td><a href="#">First Name</a></td>
-                    <td><a href="#">Last Name</a></td>
-                    <td>File Number</td>
+                <tr *ngFor="let doc of doctors">
+                    <td>{{doc.first_Name}}</td>
+                    <td>{{doc.last_Name}}</td>
+                    <td>{{doc.pay_roll}}</td>
                     <td style="text-align: center;"><input type="checkbox"></td>
                 </tr>
             </table>

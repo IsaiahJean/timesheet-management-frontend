@@ -6,9 +6,62 @@
   <app-home></app-home>
 </ng-template>
 
+<<<<<<< HEAD
 <ng-template #showLogin>
   <app-login></app-login>
 </ng-template>
+=======
+  <!--<a href="#">Logout</a>-->
+  
+  <a routerLink="/login"(click)=onLogout()>Logout</a>
+  
+  
+</header>
+
+<div class="row tabs">
+  
+    
+
+
+    <a  routerLink="/admin" class="col-sm-3 maintabs" id="admintab" 
+    (click)="mainTabClick('admintab','admin-sidebar')">
+      Administration
+    </a>
+    <a routerLink="/timecard" class="col-sm-3 maintabs" id="timecardtab" 
+    (click)='mainTabClick("timecardtab","timecard-sidebar")'>
+      Time Card
+    </a>
+    <a routerLink="/reports" class="col-sm-3 maintabs" id="reportstab" 
+    (click)='mainTabClick("reportstab", "reports-sidebar")'>
+      Reports
+    </a>
+    <button style="border-radius: 0px;" class="col-sm-3" disabled></button>
+</div>
+
+<div style="height:100%" class="container-fluid fill">
+  <div style="height:100%" class="row fill">
+
+      <div id="admin-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
+        <a routerLink="/users">Users</a>
+        <a routerLink="/master-data">Master Data</a> 
+      </div>
+
+      <div id="timecard-sidebar" class="col-sm-2 col-xs-4 sidenav fill sidenavigation hidden">
+          <a routerLink="/view-timecard">View Time Card</a>
+          <a routerLink="/new-timecard">New Time Card</a>
+       </div>
+
+       <div id="reports-sidebar" class="col-sm-2 col-xs-12 sidenav fill sidenavigation">
+      
+       </div>
+    
+      <div class="col-sm-10 col-xs-12">
+        <router-outlet></router-outlet>
+      </div>
+  </div>
+  
+</div>
+>>>>>>> a244edf339630b17e36b80b3c74bc8a951712809
 
 
 

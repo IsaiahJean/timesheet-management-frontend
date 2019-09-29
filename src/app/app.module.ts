@@ -21,6 +21,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort';
 import { HomeComponent } from './home/home.component'
 
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { HomeComponent } from './home/home.component'
   providers: [
     UserServiceService,
     UserService,
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })

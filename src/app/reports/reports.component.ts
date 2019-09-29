@@ -45,10 +45,8 @@ export class ReportsComponent implements OnInit {
     this._reportService.getTimeCards().subscribe(
       (data) => this.timeCards = data
     );
-    await delay(200);
-    console.log(this.timeCards);
+    await delay(500);
     this.sortedData = this.timeCards.slice();
-    console.log(typeof this.timeCards);
   }
 
 }
