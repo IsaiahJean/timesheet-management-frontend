@@ -14,12 +14,16 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 import { from } from 'rxjs';
+<<<<<<< HEAD
 import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
 import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { AddComponent } from './users/add/add.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort'
 
+=======
+import { CookieService } from 'ngx-cookie-service';
+>>>>>>> darius
 
 
 @NgModule({
@@ -48,6 +52,10 @@ import { MatSortModule } from '@angular/material/sort'
   providers: [
     UserServiceService,
     UserService,
+<<<<<<< HEAD
+=======
+    CookieService,
+>>>>>>> darius
   ],
   bootstrap: [AppComponent]
 })
