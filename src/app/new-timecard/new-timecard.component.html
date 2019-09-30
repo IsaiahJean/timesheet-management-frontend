@@ -1,0 +1,39 @@
+<form [formGroup]="timeCard" (ngSubmit)="onSubmit()">
+    <label>
+        Date: <input type="date" formControlName="date" required>
+    </label><br>
+
+    <label>
+        Sector:
+        <select formControlName="sector" required>
+            <option value="east">East</option>
+            <option value="west">West</option>
+        </select>
+    </label><br>
+
+    <label>
+        Location: 
+        <input type="text" formControlName="location" required>
+    </label><br>
+
+    <label>
+        Time in:
+        <input type="time" step="1800" formControlName="time_in" required>
+    </label><br>
+
+    <label>
+        Time out:
+        <input type="time" step="1800" formControlName="time_out" required>
+    </label><br>
+
+    <label>
+        Hours code:
+        <select formControlName="hours_code" required>
+            <option value="AMCO">AMCO</option>
+            <option value="FBP">FBP</option>        
+        </select>
+    </label><br>
+
+    <button type="submit" [disabled]="!timeCard.valid">Submit</button>
+</form>
+

@@ -1,0 +1,12 @@
+
+<form [formGroup]= "locationForm"(ngSubmit)="saveForm()">
+    <label>Sector:</label><br>
+    <input type="text" formControlName="sector"/><br>
+
+
+    <label>Location:</label><br>
+    <input type="text" formControlName="location"/><br><br>
+    <button type="submit"(click)="goBack()" >Save</button><br>
+    
+
+</form>

@@ -1,0 +1,15 @@
+<form [formGroup]= "doctorForm"(ngSubmit)="saveForm()">
+    <label>First Name:</label><br>
+    <input type="text" formControlName="first_name"/><br>
+
+
+    <label>Last Name:</label><br>
+    <input type="text" formControlName="last_name"/><br>
+
+    <label>Pay Roll:</label><br>
+    <input type="text" formControlName="pay_roll"/><br>
+
+    <button type="submit"(click)="goBack()" >Save</button><br>
+    
+
+</form>

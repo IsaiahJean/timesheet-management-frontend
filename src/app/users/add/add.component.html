@@ -1,0 +1,32 @@
+<h1>Users</h1>
+<div class="users-display" id="add-user-table" *ngIf="showAddForm">
+    <form [formGroup]="addUser" (ngSubmit)="onAddSubmit()">
+        <label>
+                Full Name:<br>
+                <input style="margin-right:30px;" class="field-divided" type="text" 
+                formControlName="first_name" placeholder="First" required>
+    
+                <input class="field-divided"type="text" 
+                formControlName="last_name" placeholder="Last" required>
+            </label><br>
+            <label>
+                Description:<br>
+                <input placeholder="description" class="field-long" type="text" 
+                formControlName="description" required>
+            </label><br>
+            <label>
+                Email/Login ID:<br>
+                <input placeholder="Email" class="field-long" type="text" 
+                formControlName="username" required>
+            </label><br>
+            <label>
+                Password:<br>
+                <input style="margin-right:30px;"  class="field-divided" type="text" 
+                formControlName="password" placeholder="Type Password">
+    
+                <input class="field-divided" placeholder="Re-type Password" type="text" formControlName="rePassword">
+            </label><br>
+        <button type="submit" [disabled]="!addUser.valid || matchPassword(addUser)">Submit</button>
+        <button type="reset" (click)="openForm()">Cancel</button>
+    </form>
+</div>
