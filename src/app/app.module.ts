@@ -21,6 +21,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSortModule } from '@angular/material/sort'
 
 import { CookieService } from 'ngx-cookie-service';
+import { TimeparsePipe } from './timeparse.pipe';
+import { AddDoctorComponent } from './master-data/add-doctor/add-doctor.component';
+import { AddLocationComponent } from './master-data/add-location/add-location.component';
+import { LocationDetailComponent } from './master-data/location-detail/location-detail.component';
+import { DoctorDetailComponent } from './master-data/doctor-detail/doctor-detail.component';
+
 
 
 @NgModule({
@@ -34,8 +40,13 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     ViewTimecardComponent,
     NewTimecardComponent,
-    
-	AddComponent,
+    AddComponent,
+    TimeparsePipe,
+    AddComponent,
+    AddDoctorComponent,
+    AddLocationComponent,
+    LocationDetailComponent,
+    DoctorDetailComponent,
   ],
   imports: [
     BrowserModule,

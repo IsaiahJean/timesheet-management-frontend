@@ -1,5 +1,5 @@
 <h1>View Time Card</h1>
-<span style="font-size:20px;float:left;"><strong>Andrew Hall</strong></span><br>
+<!-- <span style="font-size:20px;float:left;"><strong>Andrew Hall</strong></span><br>
 <span style="position:absolute;left:15px;">Date Created:</span>
 <span style="position:absolute;left:120px;">Date</span> 
 
@@ -58,4 +58,76 @@
     <li>30</li>
     <li>31</li>
 </ul>
+</div>
+ -->
+<table>
+    <thead>
+        <th>Date</th>
+        <th>Sector</th>
+        <th>Location</th>
+        <th>Time in</th>
+        <th>Time out</th>
+        <th>Hours Code</th>
+        <th>Hours Worked</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tc of timeCards">
+            <td><a (click)="openEditForm(tc)">{{ tc.date }}</a></td>
+            <td>{{ tc.sector }}</td>
+            <td>{{ tc.location }}</td>
+            <td>{{ tc.time_in | timeparse }}</td>
+            <td>{{ tc.time_out | timeparse }}</td>
+            <td>{{ tc.hours_code }}</td>
+            <td>{{ tc.hours_worked }}</td>
+            <td><button (click)="deleteTimeCard(tc)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="showtcForm">
+    <form [formGroup]="timeCard" (ngSubmit)="onEditSubmit()">
+        <label>
+            Date: <input type="date" formControlName="date" required>
+        </label><br>
+    
+        <label>
+            Doctor's file number:
+            <input type="number" formControlName="file_number" required>
+        </label>
+    
+        <label>
+            Sector:
+            <select formControlName="sector" required>
+                <option value="east">East</option>
+                <option value="west">West</option>
+            </select>
+        </label><br>
+    
+        <label>
+            Location: 
+            <input type="text" formControlName="location" required>
+        </label><br>
+    
+        <label>
+            Time in:
+            <input type="time" step="1800" formControlName="time_in" required>
+        </label><br>
+    
+        <label>
+            Time out:
+            <input type="time" step="1800" formControlName="time_out" required>
+        </label><br>
+    
+        <label>
+            Hours code:
+            <select formControlName="hours_code" required>
+                <option value="AMCO">AMCO</option>
+                <option value="FBP">FBP</option>        
+            </select>
+        </label><br>
+    
+        <button type="submit" [disabled]="!timeCard.valid">Submit</button>
+    </form>
+    
 </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TimeCardService } from '../time-card.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import { IDoctor } from '../doctor';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-new-timecard',
@@ -10,10 +12,11 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class NewTimecardComponent implements OnInit {
 
   public monthTimeCards: Date[] = [];
+  public doctros: IDoctor[] = [];
   public cardDate;
   
   timeCard = this._fb.group({
-    file_number:[''],
+    file_number:['', Validators.required],
     date:['', Validators.required],
     sector:['', Validators.required],
     location:['', Validators.required],
@@ -23,9 +26,16 @@ export class NewTimecardComponent implements OnInit {
     hours_worked:['']
   })
   
-  constructor(private _timeCardService: TimeCardService, private _fb: FormBuilder) { }
+  constructor(private _timeCardService: TimeCardService, private _fb: FormBuilder, private _userService: UserService) { }
 
   ngOnInit() {
+    // this.getDoctros();
+  }
+
+  getDoctros() {
+    this._userService.getDoctors().subscribe(
+      (data) => this.doctros = data
+    );
   }
 
   parseTime(time_in, time_out): string {
@@ -56,9 +66,7 @@ export class NewTimecardComponent implements OnInit {
   }
 
   onSubmit() {
-    this.timeCard.get('file_number').setValue(1);
     this.timeCard.get('hours_worked').setValue(this.parseTime(this.timeCard.get('time_in').value, this.timeCard.get('time_out').value));
-    console.log(this.timeCard.value)
     this._timeCardService.setTimeCard(this.timeCard.value).subscribe(() => this.timeCard.reset());
   }
 }

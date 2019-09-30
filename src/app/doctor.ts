@@ -1,5 +1,5 @@
 export interface IDoctor{
-    filter:any;
+        id: number;
         first_Name: string;
         last_Name: string;
         pay_roll: string;

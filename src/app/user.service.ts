@@ -25,12 +25,48 @@ export class UserService {
     'Content-Type': 'application/json',
     
   });
+  value: any;
 
   constructor(private http: HttpClient, private cookieService:CookieService) { }
 
   getLocations(): Observable<ILocation[]>{
     return this.http.get<ILocation[]>(this.baseLocationUrl,{headers: this.getAuthHeaders()}
       );
+  }
+
+  getLocation(id: number): Observable<ILocation>{
+    const url = `${this.baseLocationUrl}${id}`;
+    return this.http.get<ILocation>(url,{headers: this.getAuthHeaders()});
+  }
+
+  getDoctor(id: number): Observable<IDoctor>{
+    const url = `${this.doctorUrl}${id}`;
+    return this.http.get<IDoctor>(this.doctorUrl,{headers: this.getAuthHeaders()}
+    );
+  
+   }
+
+
+  deleteLocation(id:number): Observable<any>{
+    const url = `${this.baseLocationUrl}${id}/`;
+    return this.http.delete<ILocation>(url,{headers: this.getAuthHeaders()});
+  }
+
+
+  createLocation(location, sector): Observable<any>{
+    const body = JSON.stringify({location,sector})
+    return this.http.post(this.baseLocationUrl,body,{headers: this.getAuthHeaders()});
+  }
+
+
+  createDoctor(first_Name, last_Name, pay_roll): Observable<any>{
+    const body = JSON.stringify({first_Name,last_Name,pay_roll})
+    return this.http.post(this.doctorUrl,body,{headers: this.getAuthHeaders()});
+  }
+
+  deleteDoctor(id:number): Observable<any>{
+    const url = `${this.doctorUrl}${id}/`;
+    return this.http.delete<IDoctor>(url,{headers: this.getAuthHeaders()});
   }
 
   

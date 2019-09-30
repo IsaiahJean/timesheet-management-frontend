@@ -4,6 +4,14 @@
     </label><br>
 
     <label>
+        Doctor's file number:
+        <input type="number" formControlName="file_number" required>
+        <!-- <select>
+            <option *ngFor="let doctor of doctors" [value]="doctor.id">{{ doctor.last_Name }}</option>
+        </select> -->
+    </label><br>
+
+    <label>
         Sector:
         <select formControlName="sector" required>
             <option value="east">East</option>

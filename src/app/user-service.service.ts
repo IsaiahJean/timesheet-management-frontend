@@ -60,7 +60,7 @@ export class UserServiceService {
 
   // Get user by id
   getUser(id: number): Observable<Iuser> {
-    const url = `${this._url_patch_get_delete_usere}${id}`;
+    const url = `${this._url_patch_get_delete_usere}${id}/`;
     return this._http.get<Iuser>(url,{headers: this.getAuthHeaders()});
   }
 
