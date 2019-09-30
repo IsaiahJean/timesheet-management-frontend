@@ -9,13 +9,11 @@ import { Routes, RouterModule, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent{
-<<<<<<< HEAD
-=======
   title = 'timesheet-management';
 
   date_val = new Date();
 
-  login=false;
+  cookieExists: boolean = this.cookieService.check('e-token');
 
 
 
@@ -26,43 +24,5 @@ export class AppComponent{
     this.cookieService.delete('e-token');
     this.router.navigate(['/login']);
   }
-
-  switch1():void{
-    this.login=false;
-    //this.doctor=true;
-
-  }
-
-  switch2():void{
-    this.login=true;
-    //this.doctor=false;
-
-  }
-
-
-
-  mainTabClick(tabid,sidenavid) {
-    let maintabs = document.getElementsByClassName("maintabs");
-    for (let i = 0; i < maintabs.length; i++) {
-      //maintabs[i].style.background = "#F8F8F8";
-    }
-    document.getElementById(tabid).style.background = '#ffffff';
-  
-
-    this.sideNavChange(sidenavid);
-  
- }
-
-  sideNavChange(sidenavid) {
-    console.log(sidenavid);
-    let sidenav = document.getElementsByClassName("sidenavigation");
-
-    for (let i = 0; i < sidenav.length; i++) {
-      sidenav[i].classList.add("hidden");
-    }
-    document.getElementById(sidenavid).classList.remove("hidden");
-  }
->>>>>>> a244edf339630b17e36b80b3c74bc8a951712809
-  
 
 }

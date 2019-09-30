@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       this.userService.loginUser(this.employee).subscribe(response => {
         console.log(response);
         this.cookieService.set('e-token', response.token);
-        this.router.navigate(['/master-data']);
+        this.router.navigate(['welcome']);
         alert('User ' + this.employee.username + ' loggedin.' );
         
       },

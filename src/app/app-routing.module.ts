@@ -8,17 +8,20 @@ import { UsersComponent } from './users/users.component';
 import { ViewTimecardComponent } from './view-timecard/view-timecard.component';
 import { NewTimecardComponent } from './new-timecard/new-timecard.component';
 import { MasterDataComponent } from './master-data/master-data.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent},
+  { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: 'timecard', component: ViewTimecardComponent},
   { path: 'reports', component: ReportsComponent},
   { path: 'admin', component: MasterDataComponent},
   { path: 'users', component: UsersComponent},
   { path: 'view-timecard', component: ViewTimecardComponent},
   { path: 'new-timecard', component: NewTimecardComponent},
-  { path: 'master-data', component: MasterDataComponent}
+  { path: 'master-data', component: MasterDataComponent},
+  { path: 'welcome', component: WelcomeComponent }
 ];
 
 @NgModule({

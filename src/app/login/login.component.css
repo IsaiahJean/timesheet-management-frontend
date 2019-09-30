@@ -89,6 +89,10 @@ button {
     text-decoration: none
 }
 
+.main img {
+    
+}
+
 @media (max-width: 600px) {
     .main {
         border-radius: 0px;

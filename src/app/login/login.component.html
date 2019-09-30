@@ -1,10 +1,11 @@
 <div class="main">
-    <h1>
-        Login
-    </h1>
-        <input [(ngModel)]="employee.username" placeholder="username">
-        <br>
-        <input [(ngModel)]="employee.password" placeholder="password">
-        <br>
-        <button (click)="onLogin()">Login</button>
-</div>
+        <p class="sign" align="center"><img align="center" style="height:40px;width:40px;" src="http://www.aprilloturnercommunications.com/tc_logo.png">
+        Time Card<br>Sign in</p>
+        <form class="form1">
+    
+            <input [(ngModel)] ="employee.username" class="un " type="text" align="center" placeholder="Username">
+            <input [(ngModel)] ="employee.password" class="un" align="center" type="password" placeholder="Password">
+            <button class="submit" (click)="onLogin()">Login</button>
+    
+        </form>   
+    </div>

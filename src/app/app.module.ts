@@ -22,7 +22,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { HomeComponent } from './home/home.component'
 
 import { CookieService } from 'ngx-cookie-service';
-
+import { WelcomeComponent } from './welcome/welcome.component';
+//import "jquery";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,8 @@ import { CookieService } from 'ngx-cookie-service';
 	AddComponent,
     
 	HomeComponent,
+    
+	WelcomeComponent,
   ],
   imports: [
     BrowserModule,

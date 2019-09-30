@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { UserServiceService } from './../user-service.service';
 import { Iuser_description, IeditUser } from '../iuser';
+import 'DataTables.net';
+
 
 @Component({
   selector: 'app-users',
@@ -31,7 +33,13 @@ export class UsersComponent implements OnInit {
     this._userService.getUsers().subscribe(
       (data) => this.users = data
     );
+    $(document).ready(function() {
+      ($('#users-tables')as any).DataTable();
+  } );
+
   }
+
+  
 
   openForm() {
     this.showAddForm = !this.showAddForm;
@@ -94,5 +102,6 @@ export class UsersComponent implements OnInit {
       this._userService.deleteUser(user.id).subscribe(() => console.log("Deleted"));
     }
   }
+  
 
 }
